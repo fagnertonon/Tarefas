@@ -1,26 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tarefas.Data;
-using Microsoft.Extensions.DependencyInjection;
-
 namespace Tarefas.API.Configuration
 {
     public static class ApiConfig
     {
         public static async void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IHostEnvironment env)
         {
-            //Para utilizar com bando de dados MSSQLSERVER
             services.AddDbContext<ApplicationContext>(options =>
                  options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                     x => x.MigrationsAssembly("Tarefas.Data")));
-
-            
-            //Utilize este modelo para testar a aplicação com banco de dados em memoria
-            //services.AddDbContext<ApplicationContext>(options =>
-            //    options.UseInMemoryDatabase("TarefasDb"));
-
-
-            //Utilizar este modelo para testar a aplicação com Sqlite
-            //services.AddSqlite<ApplicationContext>(configuration.GetConnectionString("SqliteConnectionString"));
 
             services.AddControllers().AddNewtonsoftJson(options =>
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
