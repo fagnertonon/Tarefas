@@ -1,0 +1,97 @@
+<div class="container main-container">
+  <h4>Editar Tarefa</h4>
+  <hr />
+  <form
+    class="row g-3"
+    novalidate
+    (ngSubmit)="adicionarTarefa()"
+    [formGroup]="editarForm"
+  >
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label" for="descricao">Descrição</label>
+        <input
+          id="descricao"
+          formControlName="descricao"
+          class="form-control"
+          id="descricao"
+          type="text"
+          placeholder="Descrição da tarefa (requerido)"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editarForm.get('descricao').errors &&
+            (editarForm.get('descricao').dirty ||
+              editarForm.get('descricao').touched)
+          "
+        >
+          <p>Preencha o campo descricao</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label class="form-label">Data Previsão</label>
+        <input
+          id="dataPrevisao"
+          formControlName="dataPrevisao"
+          class="form-control"
+          type="date"
+          placeholder="Data Prevista (requerido)"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            editarForm.get('dataPrevisao').errors &&
+            (editarForm.get('dataPrevisao').dirty ||
+              editarForm.get('dataPrevisao').touched)
+          "
+        >
+          <p>Preencha o campo data</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label class="form-label">status</label>
+        <select
+          class="form-select form-control"
+          id="status"
+          formControlName="statusId"
+          #statusSelect
+        >
+          <option *ngFor="let item of status" value="{{ item.id }}">
+            {{ item.descricao }}
+          </option>
+        </select>
+        <span
+          class="text-danger"
+          *ngIf="
+            editarForm.get('statusId').errors &&
+            (editarForm.get('statusId').dirty ||
+              editarForm.get('statusId').touched)
+          "
+        >
+          <p>Preencha o campo status</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <button
+        class="btn btn-primary me-md-2"
+        id="Registrar"
+        type="submit"
+        [disabled]="!editarForm.valid"
+      >
+        Salvar
+      </button>
+      <button class="btn btn-info" id="Registrar" [routerLink]="['/tarefas']">
+        voltar
+      </button>
+    </div>
+  </form>
+</div>

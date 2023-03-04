@@ -1,0 +1,19 @@
+
+
+<div class="container main-container">
+  <div class="row text-center">
+    <h3>Deseja excluir a Tarefa?</h3>
+    <br />
+    <p >Descrição: {{tarefa.descricao}}</p> <br/>
+    <p >Data Prevista: {{tarefa.dataPrevisao | date:'dd/MM/yyyy'}}</p><br/>
+    <p >Status: {{tarefa.status.descricao}}</p><br/>
+    <div class="footer">
+      <button type="button" class="btn btn-outline-secondary m-2" (click)="cancelar()">
+        Cancel
+      </button>
+      <button type="button" class="btn btn-danger" (click)="excluirTarefa()">
+        Excluir
+      </button>
+    </div>
+  </div>
+</div>

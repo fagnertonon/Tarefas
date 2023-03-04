@@ -1,0 +1,50 @@
+<div>
+  <div class="card text-bg-light mb-3">
+    <div class="card-body">
+      <h6 class="card-title">{{ tarefa.descricao | titlecase }}</h6>
+      <p class="card-text">
+        <span>
+        Prazo: {{ tarefa.dataPrevisao | date : "dd/MM/yyyy" }}
+      </span>
+      <br/>
+      <span *ngIf="tarefa.dataTermino">
+        Data Termino: {{ tarefa.dataTermino | date : "dd/MM/yyyy" }}
+      </span>
+      </p>
+    </div>
+    <div class="card-footer">
+      <a 
+        class="btn btn-primary btn-sm me-md-2"
+        [ngClass]="tarefa.status.descricao == 'Concluído' ? 'disabled' : ''"
+        [routerLink]="['editar/', tarefa.id]"
+      >
+        <span class="fa fa-edit"></span> Editar
+      </a>
+
+      <a
+        *ngIf="tarefa.status.descricao == 'Em Desenvolvimento'"
+        class="btn btn-success btn-sm me-md-2"
+        (click)="concluirTarefa()"
+      >
+        <span class="fa fa-check"></span> Concluir
+      </a>
+
+      <a
+        *ngIf="tarefa.status.descricao == 'A Fazer'"
+        class="btn btn-secondary btn-sm me-md-2 "
+        (click)="desenvolverTarefa()"
+      >
+        <span class="fa fa-building"></span> Em Desenvolvimento
+      </a>
+
+      <a
+        class="btn btn-danger btn-sm me-md-2"
+        [ngClass]="tarefa.status.descricao == 'Concluído' ? 'disabled' : ''"
+        [routerLink]="['excluir/', tarefa.id]"
+      >
+        <span class="fa fa-remove"></span> Excluir
+      </a>
+    </div>
+  </div>
+</div>
+

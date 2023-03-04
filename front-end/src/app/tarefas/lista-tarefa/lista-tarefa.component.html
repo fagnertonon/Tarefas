@@ -1,0 +1,45 @@
+<div class="main-container">
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Lista de Tarefa</h4>
+    </div>
+    <div class="col-md-10">
+      <a class="btn btn-info" [routerLink]="['cadastrar/']">
+        <span class="fa fa-plus"></span> Cadastrar
+      </a>
+    </div>
+  </div>
+  <hr />
+  <div class="row text-center">
+    <div class="col-md-4">
+      <h5>A fazer</h5>
+
+      <app-detalhe-tarefa
+        class="col-md-4"
+        *ngFor="let tarefa of tarefas | filtroTarefa : filtrarAFazer"
+        [tarefa]="tarefa"
+      >
+      </app-detalhe-tarefa>
+    </div>
+
+    <div class="col-md-4">
+      <h5>Em Desenvolvimento</h5>
+      <app-detalhe-tarefa
+        class="col-md-4 mb-0"
+        *ngFor="let tarefa of tarefas | filtroTarefa : filtrarEmDesenvolvimento"
+        [tarefa]="tarefa"
+      >
+      </app-detalhe-tarefa>
+    </div>
+
+    <div class="col-md-4">
+      <h5>Concluído</h5>
+      <app-detalhe-tarefa
+        class="col-md-4"
+        *ngFor="let tarefa of tarefas | filtroTarefa : filtrarConcluido"
+        [tarefa]="tarefa"
+      >
+      </app-detalhe-tarefa>
+    </div>
+  </div>
+</div>
