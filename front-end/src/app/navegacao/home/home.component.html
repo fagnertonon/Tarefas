@@ -1,18 +1,36 @@
 <!-- Page Content -->
-<header class="bg-primary py-3 ">
-  <div class="container ">
+<header class="bg-primary py-3">
+  <div class="container">
     <div class="row text-center">
-        <h1 class="display-6 text-white mt-5 mb-2">
-          Apresentação Fagner Tonon - Desafio B3
-        </h1>
+      <h1 class="display-6 text-white mt-5 mb-2">
+        Apresentação Fagner Tonon - Desafio B3
+      </h1>
     </div>
   </div>
 </header>
 
 <div class="container main-container">
-  <div class="row">
-    <h3>Titulo</h3>
+  <div class="row d-flex justify-content-center">
+    <h3>Resumo</h3>
     <br />
-    <p>aqui vou descrer a aplicação</p>
+    <p>
+      Projeto para controle de tarefas, utilizando Angular, Api .net 6, Worker
+      Service com comunicação RabbitMq e MSSQL. Para o front-end utilizei
+      Bootstrap 5, como framework para a contrução da estrura do site. <b>Clique no menu Tarefas para visualizar a aplicação</b>
+    </p>
+    <p>Para o projeto back-end, foi utilizado .net6 utilizando o pattern CQRS para separação da leitura e escrita do banco de dados. Temos um api
+      responsável por receber as requisições do front-end, e no cenário de gravação dos dados a api faz o envio para uma fila no RabbitMq 
+      que por sua vez com o projeto worker service (Tarefas.WS) le a fila realiza a gravação no banco de dados.
+    </p>
+    <h5>Modelo de arquitetura</h5>
+    <img
+      src="../../../assets/arquitetura.png"
+      style="height: 50%; width: 50%"
+    />
+    <h5>Diagrama de dependência</h5>
+    <img
+      src="../../../assets/diagrama de pendência.png"
+      style="height: 50%; width: 50%"
+    />
   </div>
 </div>

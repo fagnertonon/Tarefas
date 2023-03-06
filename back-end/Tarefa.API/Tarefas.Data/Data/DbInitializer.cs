@@ -117,11 +117,18 @@ namespace Tarefas.Data
                 DataPrevisao = new DateTime(2023, 3, 5),
                 StatusId = aFazer.Id
             };
+            var correcaoLoadAoSalvar = new Tarefa
+            {
+                Id = Guid.NewGuid(),
+                Descricao = "Corrigir carregamento página ao trocar de status",
+                DataPrevisao = new DateTime(2023, 3, 5),
+                StatusId = aFazer.Id
+            };
 
             modelBuilder.Entity<StatusTarefa>().HasData(
                 aFazer
                 , emDesenvolvimento
-            , concluido
+                , concluido
              );
 
             modelBuilder.Entity<Tarefa>().HasData(
@@ -138,6 +145,7 @@ namespace Tarefas.Data
                 , containerizacao
                 , documentarContainer
                 , adicionarLogs
+                , correcaoLoadAoSalvar
             );
         }
     }

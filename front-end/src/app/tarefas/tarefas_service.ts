@@ -63,6 +63,7 @@ export class TarefaService {
     return this.http
       .put(url, tarefa)
       .pipe(map(this.extrairDataModel), catchError(this.serviceError));
+
   }
 
   obterStatus(): Observable<Status[]> {
@@ -73,6 +74,7 @@ export class TarefaService {
   }
 
   extrairDataModel(response: any) {
+    console.log(response);
     return response.model || {};
   }
 
