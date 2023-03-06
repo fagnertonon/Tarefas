@@ -73,28 +73,32 @@ namespace Tarefas.Data
                 Id = Guid.NewGuid(),
                 Descricao = "Desenvolver front-end com Angular",
                 DataPrevisao = new DateTime(2023, 3, 3),
-                StatusId = emDesenvolvimento.Id
+                DataTermino =  new DateTime(2023,3,4),
+                StatusId = concluido.Id
             };
             var tarefa8 = new Tarefa
             {
                 Id = Guid.NewGuid(),
                 Descricao = "Testar comunicação ponta a ponta",
                 DataPrevisao = new DateTime(2023, 3, 3),
-                StatusId = aFazer.Id
+                DataTermino = new DateTime(2023, 3, 4),
+                StatusId = concluido.Id
             };
             var versionar = new Tarefa
             {
                 Id = Guid.NewGuid(),
                 Descricao = "Versionar projeto GitHub",
                 DataPrevisao = new DateTime(2023, 3, 4),
-                StatusId = aFazer.Id
+                DataTermino = new DateTime(2023, 3, 4),
+                StatusId = concluido.Id
             };
             var documentarReadme = new Tarefa
             {
                 Id = Guid.NewGuid(),
                 Descricao = "Documentar como utilizar o projeto README",
                 DataPrevisao = new DateTime(2023, 3, 4),
-                StatusId = aFazer.Id
+                DataTermino = new DateTime(2023, 3, 4),
+                StatusId = concluido.Id
             };
             var containerizacao = new Tarefa
             {
@@ -115,7 +119,8 @@ namespace Tarefas.Data
                 Id = Guid.NewGuid(),
                 Descricao = "Adicionar logs para suporte da aplicação",
                 DataPrevisao = new DateTime(2023, 3, 5),
-                StatusId = aFazer.Id
+                DataTermino = new DateTime(2023,3,4),
+                StatusId = concluido.Id
             };
             var correcaoLoadAoSalvar = new Tarefa
             {
