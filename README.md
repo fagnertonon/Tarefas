@@ -4,7 +4,7 @@ Projeto para controle de tarefas, utilizando Angular, Api .net 6, Worker Service
 
 ## Antes de usar
 
-Para utilizar este projeto você precisar ter conhecimento prêvio em node, angular 2 em diante, C# api e worker service, e também RabbitMq.
+Para utilizar este projeto você precisar ter conhecimento prêvio em node, angular 2 em diante, C# api e worker service, e também RabbitMQ.
 
 Na máquina onde o projeto será executa você precisa ter as seguintes ferramentas.
 * front-end
@@ -43,7 +43,7 @@ Para utilizar este projeto você precisa seguir os seguintes passos
 * Para o banco de dados
     * precisa ter o banco de dados MSSQL SERVER instalado na máquina, após a instação ajustar caso necessário a string de conexão. **a string de conexão deve ser alterada tando para o projeto Tarefas.API e também para o projeto Tarefas.WS**
     
-         > Como alternariva para utilização do banco estou deixando um banco de dados remoto provisório para utilização dos testes. Para utilizar basta alterar a connection string no arquivo ***appsettings.Development.json***
+         > Como alternativa para utilização do banco estou deixando um banco de dados remoto provisório para utilização dos testes. Para utilizar basta alterar a connection string no arquivo ***appsettings.Development.json***
 
 ```
 Para usar o banco de dados remoto trocar de :
