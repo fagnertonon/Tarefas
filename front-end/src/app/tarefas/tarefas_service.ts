@@ -13,7 +13,6 @@ export class TarefaService {
   protected endPointTarefa: string = 'tarefa';
 
   obterTarefas(): Observable<Tarefa[]> {
-    // const url = `${this.UrlServiceV1}/${this.endPointTarefa}/obter-todos`;
     const url = `${this.UrlServiceV1}/${this.endPointTarefa}`;
     var response = this.http
       .get<Tarefa[]>(url)

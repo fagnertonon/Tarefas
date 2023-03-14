@@ -24,18 +24,14 @@ namespace Tarefas.API.Configuration
             });
         }
 
-        public static void UseApiConfiguration(this WebApplication app, IWebHostEnvironment env)
+        public static async void UseApiConfiguration(this WebApplication app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationContext>();
-                context.Database.Migrate();
-            }
-            //AsseguraDBExiste(app.Services);
+
+            await AsseguraDBExiste(app.Services);
 
             app.UseHttpsRedirection();
 
