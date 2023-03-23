@@ -13,7 +13,7 @@ Na máquina onde o projeto será executa você precisa ter as seguintes ferramen
 * back end
     * .net6
     * RabbitMq
-    * MSSQL (Opcional, haverá uma string de conexão remoto para facilitar os testes)
+    * MSSQL
 
 ## Como usar
 
@@ -45,16 +45,6 @@ Para utilizar este projeto você precisa seguir os seguintes passos
     
          > Como alternativa para utilização do banco estou deixando um banco de dados remoto provisório para utilização dos testes. Para utilizar basta alterar a connection string no arquivo ***appsettings.Development.json***
 
-```
-Para usar o banco de dados remoto trocar de :
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=TarefasDb;Trusted_Connection=True;"
-  },
- Para (Banco de dados remoto)
-   "ConnectionStrings": {
-    "DefaultConnection": "Data Source=SQL5102.site4now.net;Initial Catalog=db_a77998_tarefasdb;User Id=db_a77998_tarefasdb_admin;Password=!Tarefa123"
-  },
-```
 > Lembrar de alterar ***appsettings.Development.json*** para os dois projetos ***Tarefas.API*** e ***Tarefas.WS***
     
     
